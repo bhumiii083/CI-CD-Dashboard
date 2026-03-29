@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import PipelineCard from './PipelineCard';
 import './App.css';
 
 const pipeline = [{
@@ -17,14 +17,7 @@ status : 'Failed ❌'
 
 // PipelineCard = template (how UI looks)
 // App = provides data
-function PipelineCard ({name,status}) {
-  return(
-    <div>
-      <h3>{name}</h3>
-      <p>Status : {status}</p>
-    </div>
-  )
-}
+
 function App() {
   return (
     <div>
