@@ -15,15 +15,26 @@ status : 'Failed ❌'
   status: 'Running 🏃‍♀️'
 }]
 
+// PipelineCard = template (how UI looks)
+// App = provides data
+function PipelineCard ({name,status}) {
+  return(
+    <div>
+      <h3>{name}</h3>
+      <p>Status : {status}</p>
+    </div>
+  )
+}
 function App() {
   return (
     <div>
       <h1>MY CI/CD DASHBOARD!</h1>
       {pipeline.map((pl) =>(
-      <p key ={pl.id}>
-        {pl.name} - {pl.status}
-      </p>
-
+      <PipelineCard
+      key={pl.id}
+      name={pl.name}
+      status={pl.status}
+        />
       ))}
     </div>
   );
