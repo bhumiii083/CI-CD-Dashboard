@@ -7,21 +7,21 @@ const pipeline = [{
   status: 'success',
   logs : ["Build started...",
   "Tests passed...",
-  "Deployment successful..."]
+  "Deployment successful 🥳..."]
 }, {
   id: 2,
   name: 'Pipeline 2',
   status: 'failed',
   logs : ["Build started...",
   "Tests passed...",
-  "Deployment successful..."]
+  "Deployment FAILED 😣"]
 }, {
   id: 3,
   name: 'Pipeline 3',
   status: 'running',
   logs : ["Build started...",
   "Tests passed...",
-  "Deployment successful..."]
+  "Deployment in progress 😗..."]
 }]
 
 
@@ -30,7 +30,7 @@ const pipeline = [{
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <h1>MY CI/CD DASHBOARD!</h1>
       {pipeline.map((pl) => (
         <PipelineCard
