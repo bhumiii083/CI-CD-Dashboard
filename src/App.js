@@ -4,16 +4,26 @@ import './App.css';
 const pipeline = [{
   id: 1,
   name: 'Pipeline 1',
-  status: 'success'
+  status: 'success',
+  logs : ["Build started...",
+  "Tests passed...",
+  "Deployment successful..."]
 }, {
   id: 2,
   name: 'Pipeline 2',
-  status: 'failed'
+  status: 'failed',
+  logs : ["Build started...",
+  "Tests passed...",
+  "Deployment successful..."]
 }, {
   id: 3,
   name: 'Pipeline 3',
-  status: 'running'
+  status: 'running',
+  logs : ["Build started...",
+  "Tests passed...",
+  "Deployment successful..."]
 }]
+
 
 // PipelineCard = template (how UI looks)
 // App = provides data
@@ -27,6 +37,7 @@ function App() {
           key={pl.id}
           name={pl.name}
           status={pl.status}
+          logs ={pl.logs}
         />
       ))}
     </div>

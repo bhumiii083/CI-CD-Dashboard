@@ -1,4 +1,8 @@
-function PipelineCard({ name, status }) {
+import { useState } from "react";
+
+function PipelineCard({ name, status , logs }) {
+    const [showLogs,setShowLogs] = useState(false)
+
     let color = "black";
     if (status === "success") {
         color = "green";
@@ -6,11 +10,21 @@ function PipelineCard({ name, status }) {
         color = "red";
     }
     return (
-        <div>
+        <div onClick={() => setShowLogs(!showLogs)}>
             <h3>{name}</h3>
             <p style={{ color: color }} >
             Status : {status}</p>
+            {showLogs && (
+                <div>
+                    {logs.map((log,index) => (
+                        <p key = {index}>{log}</p>
+                    ))}
+                    </div>
+            )}
+
         </div>
     )
 }
 export default PipelineCard;
+
+// const [state, setState] = useState(initialState)
